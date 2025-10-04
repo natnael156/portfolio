@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natnael Tefera | Full-Stack UI/UX Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-animate">N<span>.</span></div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="loading-text" id="loadingText">Initializing Portfolio...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="gradient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-text">Nati<span class="logo-dot">.</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#cv" class="nav-link">Resume</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#contact" class="nav-cta pulse-glow">Hire Me</a>
+                </div>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge floating">
+                    <i class="fas fa-star"></i>
+                    <span>Available for Freelance</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="typed-text" id="typed-text-1"></span>
+                        <span class="cursor" id="cursor-1">|</span>
+                    </span>
+                    <span class="title-line highlight">
+                        <span class="typed-text" id="typed-text-2"></span>
+                        <span class="cursor" id="cursor-2">|</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="typed-text" id="typed-text-3"></span>
+                        <span class="cursor" id="cursor-3">|</span>
+                    </span>
+                </h1>
+
+                <p class="hero-description" id="hero-description">
+                    <!-- Text will be typed here -->
+                </p>
+
+               <div class="hero-btns">
+    <a href="#portfolio" class="btn btn-primary magnetic">
+        <span>Explore My Work</span>
+        <i class="fas fa-arrow-right"></i>
+    </a>
+    <a href="#contact" class="btn btn-secondary magnetic">
+        <span>Start Project</span>
+        <i class="fas fa-paper-plane"></i>
+    </a>
+    <a href="#cv" class="btn btn-outline magnetic">
+        <span>View Resume</span>
+        <i class="fas fa-file-alt"></i>
+    </a>
+</div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-count="10">0</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="hero-visual">
+    <!-- 3D Card Elements -->
+    <div class="card-3d card-1 floating">
+        <i class="fab fa-react" title="React"></i>
+    </div>
+    <div class="card-3d card-2 floating delay-1">
+        <i class="fab fa-vuejs" title="Vue.js"></i>
+    </div>
+    <div class="card-3d card-3 floating delay-2">
+        <i class="fab fa-node-js" title="Node.js"></i>
+    </div>
+
+    <!-- Added new tech icons -->
+    <div class="card-3d card-4 floating delay-1">
+        <i class="fab fa-html5" title="HTML5"></i>
+    </div>
+    <div class="card-3d card-5 floating delay-2">
+        <i class="fab fa-figma" title="fa-figma"></i>
+    </div>
+    <div class="card-3d card-6 floating delay-3">
+        <i class="fab fa-js" title="JavaScript"></i>
+    </div>
+    <div class="card-3d card-7 floating delay-4">
+        <i class="fab fa-css3-alt" title="CSS3"></i>
+    </div>
+    <div class="card-3d card-8 floating delay-5">
+        <i class="fab fa-python" title="fa-python"></i>
+    </div>
+    <div class="card-3d card-9 floating delay-6">
+        <i class="fas fa-database" title="MySQL"></i>
+    </div>
+</div>
+
+
+                <!-- Interactive Code Editor -->
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="window-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <span class="file-name">portfolio.js</span>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                        </div>
+                        <pre class="code" id="animatedCode"><code class="javascript">
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to Explore</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">About Me</span>
+                <h2 class="section-title">The Mind Behind The Magic</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container hover-3d">
+                        <img src="assets/nat.jpg" alt="Alex Morgan">
+                        <div class="image-overlay">
+                            <div class="experience-badge floating">
+                                <span class="years">5+</span>
+                                <span class="text">Years Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tech Stack Floating Icons -->
+                    <div class="tech-cloud">
+                        <div class="tech-icon" style="--i:1"><i class="fab fa-react"></i></div>
+                        <div class="tech-icon" style="--i:2"><i class="fab fa-css3-alt"></i></div>
+                        <div class="tech-icon" style="--i:3"><i class="fab fa-js"></i></div>
+                        <div class="tech-icon" style="--i:4"><i class="fab fa-node"></i></div>
+                        <div class="tech-icon" style="--i:5"><i class="fab fa-python"></i></div>
+                        <div class="tech-icon" style="--i:5"><i class="fab fa-github"></i></div>
+                         <div class="tech-icon" style="--i:5"><i class="fab fa-html5"></i></div>
+                        <div class="tech-icon" style="--i:6"><i class="fab fa-figma"></i></div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>Turning Vision into <span class="text-gradient">Digital Reality</span></h3>
+                    <p>I'm a passionate Full-Stack UI/UX Developer with over 5 years of experience creating digital products that users love. My approach combines technical expertise with a deep understanding of user psychology.</p>
+                    
+                    <div class="interactive-stats">
+                        <div class="interactive-stat">
+                            <div class="stat-circle" data-value="95">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="36" cx="40" cy="40"/>
+                                </svg>
+                                <span class="stat-percent">95%</span>
+                            </div>
+                            <span class="stat-name">UI/UX Design</span>
+                        </div>
+                        <div class="interactive-stat">
+                            <div class="stat-circle" data-value="90">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="36" cx="40" cy="40"/>
+                                </svg>
+                                <span class="stat-percent">90%</span>
+                            </div>
+                            <span class="stat-name">Frontend Dev</span>
+                        </div>
+                        <div class="interactive-stat">
+                            <div class="stat-circle" data-value="85">
+                                <svg class="progress-ring" width="80" height="80">
+                                    <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="36" cx="40" cy="40"/>
+                                </svg>
+                                <span class="stat-percent">85%</span>
+                            </div>
+                            <span class="stat-name">Backend Dev</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-container">
+                        <!-- Skills will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Work</span>
+                <h2 class="section-title">Creative Portfolio</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active magnetic" data-filter="all">
+                    <span>All Projects</span>
+                </button>
+                <button class="filter-btn magnetic" data-filter="web">
+                    <span>Web Apps</span>
+                </button>
+                <button class="filter-btn magnetic" data-filter="mobile">
+                    <span>Mobile</span>
+                </button>
+                <button class="filter-btn magnetic" data-filter="ui-ux">
+                    <span>UI/UX Design</span>
+                </button>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Projects loaded dynamically -->
+            </div>
+
+            <div class="portfolio-cta">
+                <p>Interested in working together?</p>
+                <a href="#contact" class="btn btn-primary magnetic">
+                    <span>Start a Project</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section class="cv-section" id="cv">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Resume</span>
+                <h2 class="section-title">Experience & Education</h2>
+            </div>
+            
+            <div class="cv-tabs">
+                <button class="cv-tab active magnetic" data-tab="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experience</span>
+                </button>
+                <button class="cv-tab magnetic" data-tab="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </button>
+                <button class="cv-tab magnetic" data-tab="certifications">
+                    <i class="fas fa-award"></i>
+                    <span>Certifications</span>
+                </button>
+            </div>
+            
+            <div class="cv-content">
+                <div class="cv-tab-content active" id="experience-tab">
+                    <!-- Experience loaded dynamically -->
+                </div>
+                <div class="cv-tab-content" id="education-tab">
+                    <!-- Education loaded dynamically -->
+                </div>
+                <div class="cv-tab-content" id="certifications-tab">
+                    <!-- Certifications loaded dynamically -->
+                </div>
+            </div>
+            
+            <div class="cv-download">
+                <a href="#" class="btn btn-primary magnetic" id="downloadCvBtn">
+                    <i class="fas fa-download"></i>
+                    <span>Download Full CV</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Let's Create Something Amazing</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>natnaeltefera156@gmail.com</p>
+                            <span class="contact-sub">Response within 24 hours</span>
+                        </div>
+                    </div>
+                    <div class="contact-item hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+251909081524</p>
+                             <p>+251989284377</p>
+                            <span class="contact-sub">Mon-Sat 6AM - 6PM</span>
+                        </div>
+                    </div>
+                    <div class="contact-item hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Ethiopya, Adama</p>
+                            <span class="contact-sub">Available worldwide</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+   
+    <a href="https://www.linkedin.com/in/natnael-tefera156" target="_blank" class="social-link magnetic">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+   
+    </a>
+    <a href="https://github.com/natnael156" target="_blank" class="social-link magnetic">
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+
+          
+                <div class="copyright">
+                    <p>&copy; 2025 Natnael Tefera. All rights reserved.</p>
+                </div>
+
+                </div>
+                
+                <form class="contact-form" id="contactForm" action="send_email.php" method="POST">
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required class="form-input">
+        <i class="fas fa-user input-icon"></i>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required class="form-input">
+        <i class="fas fa-envelope input-icon"></i>
+    </div>
+    <div class="form-group">
+        <input type="text" name="subject" placeholder="Subject" required class="form-input">
+        <i class="fas fa-tag input-icon"></i>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required class="form-input"></textarea>
+        <i class="fas fa-comment input-icon"></i>
+    </div>
+    <button type="submit" class="btn btn-primary magnetic">
+        <span>Send Message</span>
+        <i class="fas fa-paper-plane"></i>
+    </button>
+</form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer 
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="logo">
+                        Alex<span class="logo-dot">.</span>
+                    </div>
+                    <p class="footer-description">Crafting digital experiences that inspire and innovate.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link magnetic">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#portfolio">Work</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#">UI/UX Design</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Mobile Apps</a>
+                        <a href="#">Consulting</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Blog</a>
+                        <a href="#">Case Studies</a>
+                        <a href="#">Free Resources</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 Alex Morgan. All rights reserved.</p>
+                </div>
+                <div class="footer-actions">
+                    <button class="back-to-top magnetic" id="backToTop">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- Scripts -->
+     <!-- Include EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function() {
+    emailjs.init("0d0fKg4yDikjBBGv4"); // Replace with your EmailJS Public Key
+})();
+
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleFormSubmit(contactForm);
+    });
+}
+
+function handleFormSubmit(form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+    };
+
+    // Send to owner first
+    emailjs.send("service_83jsbnl", "template_599oide", data)
+    .then(() => {
+        // Then send auto-reply to sender
+        return emailjs.send("service_83jsbnl", "template_cm7khil", data);
+    })
+    .then(() => {
+        alert(`Thank you, ${data.name}! Your message has been sent successfully.`);
+        form.reset();
+    })
+    .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Oops! Something went wrong. Please try again later.");
+    })
+    .finally(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initContactForm);
+</script>
+
+
+     
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+</html>
