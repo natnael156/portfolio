@@ -1112,23 +1112,35 @@ class ProfessionalPortfolio {
         reveals.forEach(reveal => observer.observe(reveal));
     }
 
-    async downloadCV() {
-        try {
+   async downloadCV() {
+    const fileUrl = 'https://natnael156.github.io/portfolio/assets/nati.pdf';
+    
+    try {
+        const testResponse = await fetch(fileUrl);
+        if (testResponse.ok) {
             const link = document.createElement('a');
-            link.href = '/assets/nati.pdf';
-            link.download = 'nati-cv.pdf';
-            link.style.display = 'none';
+            link.href = fileUrl;
+            link.download = 'Natnael-Tefera-CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
             this.showNotification('CV download started!', 'success');
-        } catch (error) {
-            console.error('Error downloading CV:', error);
-            this.showNotification('Error downloading CV', 'error');
+        } else {
+            throw new Error('File not found');
         }
+    } catch (error) {
+        console.error('Download error:', error);
+        this.showNotification(
+            'CV download unavailable. Please email me at natnaeltefera156@gmail.com to request my CV.', 
+            'info'
+        );
+        setTimeout(() => {
+            if (confirm('Would you like to email me to request the CV?')) {
+                window.location.href = 'mailto:natnaeltefera156@gmail.com?subject=CV Request&body=Hello, I would like to request your CV.';
+            }
+        }, 1000);
     }
-
+}
     showNotification(message, type = 'success') {
         document.querySelectorAll('.notification').forEach(notification => notification.remove());
 
@@ -1225,3 +1237,4 @@ rippleStyles.textContent = `
     }
 `;
 document.head.appendChild(rippleStyles);
+
