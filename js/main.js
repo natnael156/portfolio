@@ -1,4 +1,4 @@
-// Fixed Professional Portfolio - All Buttons Working
+// Fixed Professional Portfolio - All Buttons Working with Mobile Fixes
 class ProfessionalPortfolio {
     constructor() {
         this.currentTheme = 'dark';
@@ -11,6 +11,7 @@ class ProfessionalPortfolio {
         this.initCoreFeatures();
         this.loadAllContent();
         this.initAnimations();
+        this.initMobileLayout(); // Added mobile layout initialization
     }
 
     initLoadingScreen() {
@@ -69,6 +70,108 @@ class ProfessionalPortfolio {
         this.initScrollProgress();
         this.initTouchInteractions();
         this.initMainNavigationButtons(); 
+    }
+
+    // Initialize mobile-specific layout adjustments
+    initMobileLayout() {
+        // Adjust layout for mobile
+        if (window.innerWidth <= 992) {
+            this.adjustMobileLayout();
+        }
+        
+        // Adjust floating animation speed on mobile
+        if (window.innerWidth <= 768) {
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach(el => {
+                el.style.animationDuration = '8s';
+            });
+            
+            // Make cards non-interactive on mobile
+            const cards = document.querySelectorAll('.card-3d');
+            cards.forEach(card => {
+                card.style.pointerEvents = 'none';
+            });
+        }
+        
+        // Listen for resize events to adjust layout
+        window.addEventListener('resize', () => {
+            this.handleResize();
+        });
+    }
+    
+    adjustMobileLayout() {
+        // Reposition hero visual elements for mobile
+        const heroVisual = document.querySelector('.hero-visual');
+        if (heroVisual && window.innerWidth <= 992) {
+            heroVisual.style.position = 'relative';
+            heroVisual.style.right = '0';
+            heroVisual.style.top = '0';
+            heroVisual.style.transform = 'none';
+            heroVisual.style.width = '100%';
+            heroVisual.style.height = '300px';
+            heroVisual.style.marginTop = '40px';
+            heroVisual.style.marginBottom = '40px';
+        }
+        
+        // Adjust code editor for mobile
+        const codeEditor = document.querySelector('.code-editor');
+        if (codeEditor && window.innerWidth <= 992) {
+            codeEditor.style.position = 'relative';
+            codeEditor.style.left = '0';
+            codeEditor.style.top = '0';
+            codeEditor.style.transform = 'none';
+            codeEditor.style.width = '100%';
+            codeEditor.style.maxWidth = '400px';
+            codeEditor.style.margin = '40px auto';
+        }
+        
+        // Adjust tech cloud for mobile
+        const techCloud = document.querySelector('.tech-cloud');
+        if (techCloud && window.innerWidth <= 992) {
+            techCloud.style.position = 'relative';
+            techCloud.style.right = '0';
+            techCloud.style.top = '0';
+            techCloud.style.transform = 'none';
+            techCloud.style.marginTop = '40px';
+            techCloud.style.textAlign = 'center';
+            
+            // Make tech icons smaller and visible
+            const techIcons = techCloud.querySelectorAll('.tech-icon');
+            techIcons.forEach(icon => {
+                icon.style.position = 'relative';
+                icon.style.display = 'inline-block';
+                icon.style.margin = '10px';
+                icon.style.animation = 'none';
+                icon.style.width = '40px';
+                icon.style.height = '40px';
+                icon.style.fontSize = '1.2rem';
+            });
+        }
+        
+        // Adjust stats layout for mobile
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats && window.innerWidth <= 768) {
+            heroStats.style.flexDirection = 'column';
+            heroStats.style.gap = '20px';
+            heroStats.style.alignItems = 'center';
+        }
+    }
+    
+    handleResize() {
+        this.adjustMobileLayout();
+        
+        // Re-adjust floating animation speed
+        if (window.innerWidth <= 768) {
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach(el => {
+                el.style.animationDuration = '8s';
+            });
+        } else {
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach(el => {
+                el.style.animationDuration = '6s';
+            });
+        }
     }
 
     // Initialize all specific buttons for smooth scrolling and actions
@@ -205,85 +308,84 @@ class ProfessionalPortfolio {
 
     // Typed Text Animation
     initTypedText() {
-    const texts = {
-        line1: "Crafting Digital",
-        line2: "Experiences",
-        line3: "That Inspire",
-        description: "Full-Stack UI/UX Developer with 5+ years of experience creating innovative digital solutions. Specializing in modern web technologies and user-centered design principles."
-    };
+        const texts = {
+            line1: "Crafting Digital",
+            line2: "Experiences",
+            line3: "That Inspire",
+            description: "Full-Stack UI/UX Developer with 5+ years of experience creating innovative digital solutions. Specializing in modern web technologies and user-centered design principles."
+        };
 
-    const typedText1 = document.getElementById('typed-text-1');
-    const typedText2 = document.getElementById('typed-text-2');
-    const typedText3 = document.getElementById('typed-text-3');
-    const heroDescription = document.getElementById('hero-description');
+        const typedText1 = document.getElementById('typed-text-1');
+        const typedText2 = document.getElementById('typed-text-2');
+        const typedText3 = document.getElementById('typed-text-3');
+        const heroDescription = document.getElementById('hero-description');
 
-    // Clear previous text
-    if (typedText1) typedText1.textContent = '';
-    if (typedText2) typedText2.textContent = '';
-    if (typedText3) typedText3.textContent = '';
-    if (heroDescription) heroDescription.textContent = '';
+        // Clear previous text
+        if (typedText1) typedText1.textContent = '';
+        if (typedText2) typedText2.textContent = '';
+        if (typedText3) typedText3.textContent = '';
+        if (heroDescription) heroDescription.textContent = '';
 
-    // Start typing sequence
-    this.typeText('typed-text-1', texts.line1, 80, () => {
-        this.typeText('typed-text-2', texts.line2, 60, () => {
-            this.typeText('typed-text-3', texts.line3, 80, () => {
-                this.typeText('hero-description', texts.description, 30, () => {
-                    // 🔁 Restart after 5 seconds
-                    setTimeout(() => {
-                        this.initTypedText();
-                    }, 5000);
+        // Start typing sequence
+        this.typeText('typed-text-1', texts.line1, 80, () => {
+            this.typeText('typed-text-2', texts.line2, 60, () => {
+                this.typeText('typed-text-3', texts.line3, 80, () => {
+                    this.typeText('hero-description', texts.description, 30, () => {
+                        // 🔁 Restart after 5 seconds
+                        setTimeout(() => {
+                            this.initTypedText();
+                        }, 5000);
+                    });
                 });
             });
         });
-    });
-}
-
-typeText(elementId, text, speed, onComplete = null) {
-    const element = document.getElementById(elementId);
-    if (!element) {
-        if (onComplete) onComplete();
-        return;
     }
 
-    let i = 0;
-    const type = () => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else if (onComplete) {
-            onComplete();
+    typeText(elementId, text, speed, onComplete = null) {
+        const element = document.getElementById(elementId);
+        if (!element) {
+            if (onComplete) onComplete();
+            return;
         }
-    };
-    type();
-}
 
+        let i = 0;
+        const type = () => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else if (onComplete) {
+                onComplete();
+            }
+        };
+        type();
+    }
 
-   // Code Animation
-initCodeAnimation() {
-    const codeElement = document.getElementById('animatedCode');
-    if (!codeElement) return;
+    // Code Animation
+    initCodeAnimation() {
+        const codeElement = document.getElementById('animatedCode');
+        if (!codeElement) return;
 
-    const code = `function createPortfolio() {\n  const innovation = true;\n  const design = 'beautiful';\n  const code = 'clean';\n  \n  return {\n    userExperience: 'seamless',\n    performance: 'optimized',\n    impact: 'memorable'\n  };\n}`;
+        const code = `function createPortfolio() {\n  const innovation = true;\n  const design = 'beautiful';\n  const code = 'clean';\n  \n  return {\n    userExperience: 'seamless',\n    performance: 'optimized',\n    impact: 'memorable'\n  };\n}`;
 
-    codeElement.textContent = '';
-    let i = 0;
+        codeElement.textContent = '';
+        let i = 0;
 
-    const typeCode = () => {
-        if (i < code.length) {
-            codeElement.textContent += code.charAt(i);
-            i++;
-            setTimeout(typeCode, 30);
-        } else {
-            // 🔁 Restart after 5 seconds
-            setTimeout(() => {
-                this.initCodeAnimation();
-            }, 5000);
-        }
-    };
+        const typeCode = () => {
+            if (i < code.length) {
+                codeElement.textContent += code.charAt(i);
+                i++;
+                setTimeout(typeCode, 30);
+            } else {
+                // 🔁 Restart after 5 seconds
+                setTimeout(() => {
+                    this.initCodeAnimation();
+                }, 5000);
+            }
+        };
 
-    setTimeout(typeCode, 2000);
-}
+        setTimeout(typeCode, 2000);
+    }
 
     // PORTFOLIO SECTION
     portfolioItems = [
@@ -689,9 +791,7 @@ initCodeAnimation() {
     }
 
     // CONTACT SECTION
-
-
- initContactForm() {
+    initContactForm() {
         const contactForm = document.getElementById('contactForm');
         if (!contactForm) {
             console.error('Contact form not found');
@@ -726,7 +826,6 @@ initCodeAnimation() {
             submitBtn.disabled = false;
         }, 2000);
     }
-
 
     // Initialize footer buttons (like 'backToTop') and header 'Hire Me' button
     initFooterButtons() {
@@ -1013,22 +1112,23 @@ initCodeAnimation() {
         reveals.forEach(reveal => observer.observe(reveal));
     }
 
-async downloadCV() {
-    try {
-        const link = document.createElement('a');
-        link.href = '/assets/nati.pdf';
-        link.download = 'nati-cv.pdf';
-        link.style.display = 'none';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        this.showNotification('CV download started!', 'success');
-    } catch (error) {
-        console.error('Error downloading CV:', error);
-        this.showNotification('Error downloading CV', 'error');
+    async downloadCV() {
+        try {
+            const link = document.createElement('a');
+            link.href = '/assets/nati.pdf';
+            link.download = 'nati-cv.pdf';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            this.showNotification('CV download started!', 'success');
+        } catch (error) {
+            console.error('Error downloading CV:', error);
+            this.showNotification('Error downloading CV', 'error');
+        }
     }
-}
+
     showNotification(message, type = 'success') {
         document.querySelectorAll('.notification').forEach(notification => notification.remove());
 
